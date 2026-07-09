@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nehra Education | Education Admission Platform</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/1001.css" />
+    <link rel="icon" type="image/png" href="images/favicon.PNG"/>	
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Nehra Education">
+          <img src="images/logo.png" alt="logo" width="100">
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="India Online Admission/index.html" data-nav="online">India Online Admission</a>
+          <a href="India Campus Admission/index.html" data-nav="campus">India Campus Admission</a>
+          <a href="Abroad Admission/index.html" data-nav="abroad">Abroad Admission</a>
+          <a href="Career Guidance/index.html" data-nav="guidance">Career Guidance</a>
+          <a href="Why-us/index.html" data-nav="why">Why Us</a>
+          <a href="About-us/index.html" data-nav="about">About Us</a>
+          <a href="Contact-us/index.html" data-nav="contact">Contact Us</a>
+        </div>
+
+        <div class="header-actions">
+          <a class="audit-btn" href="contact-us.html">Free Career Audit <span aria-hidden="true">&rarr;</span></a>
+          <!-- <a class="login-btn" href="contact-us.html">Login</a> -->
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home-hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Admission guidance for India and abroad</p>
+          <h1>Empowering Students to Build <span>Global Careers</span></h1>
+          <p class="hero-copy">
+            Making world-class education accessible through expert guidance, seamless admissions, and global opportunities.
+          </p>
+
+          <form class="search-panel" id="homeSearch">
+            <label class="location-field">
+              <span class="pin-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path>
+                  <circle cx="12" cy="9" r="2.6"></circle>
+                </svg>
+              </span>
+              <input id="searchInput" type="search" placeholder="Search course, city or country" />
+            </label>
+            <label class="type-field">
+              <select id="pathwayFilter" aria-label="Choose admission pathway">
+                <option value="all">All Pathways</option>
+                <option value="online">Online Degree</option>
+                <option value="campus">Campus Admission</option>
+                <option value="abroad">Study Abroad</option>
+                <option value="guidance">Career Guidance</option>
+              </select>
+            </label>
+            <button type="submit">Search</button>
+          </form>
+
+          <div class="city-row" aria-label="Popular locations">
+            <strong>Popular:</strong>
+            <button type="button" data-query="Bangalore">Bangalore</button>
+            <button type="button" data-query="Mumbai">Mumbai</button>
+            <button type="button" data-query="Delhi NCR">Delhi NCR</button>
+            <button type="button" data-query="Pune">Pune</button>
+            <button type="button" data-query="Hyderabad">Hyderabad</button>
+            <button type="button" data-query="Canada">Canada</button>
+            <button type="button" data-query="Online MBA">Online MBA</button>
+          </div>
+        </div>
+	  </section>
+
+      <section class="partners-section">
+
+    <div class="partners-container">
+
+        <div class="section-title">
+            <h2>Partnering with Leading Universities and Industry Leaders Worldwide</h2>
+        </div>
+
+        <div class="slider">
+
+            <div class="slide-track">
+
+                <!-- Logos -->
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <!-- Duplicate Logos for Infinite Scroll -->
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+                <div class="slide">
+                    <img src="images/logo.png" alt="Partner Logo">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+      <section class="audience-section">
+        <div class="audience-tabs" role="tablist" aria-label="Choose audience">
+          <button class="tab active" type="button" data-audience="students">STUDENTS</button>
+          <button class="tab" type="button" data-audience="parents">PARTNER</button>
+          <button class="tab" type="button" data-audience="schools">SCHOOLS</button>
+        </div>
+
+        <div class="service-grid" id="serviceGrid">
+          <a class="service-card" href="Career Guidance/index.html" data-type="guidance" data-audience="students parents schools" data-tags="career counselling guidance assessment student parent school delhi mumbai bangalore">
+            <span class="pill">480+ Cities</span>
+            <span class="service-icon blue">CG</span>
+            <h2>Career Guidance</h2>
+            <p>Counselling, profile review and decision support.</p>
+          </a>
+          <a class="service-card" href="India Online Admission/index.html" data-type="online" data-audience="students parents" data-tags="online degree mba bca mca bcom distance ugc india bangalore mumbai delhi ncr pune hyderabad">
+            <span class="pill">180+ Courses</span>
+            <span class="service-icon violet">OD</span>
+            <h2>Online Degree</h2>
+            <p>UGC-entitled online programs and flexible learning.</p>
+          </a>
+          <a class="service-card" href="India Campus Admission/index.html" data-type="campus" data-audience="students parents schools" data-tags="india campus admission college university bangalore delhi ncr mumbai pune hyderabad chennai">
+            <span class="pill">300+ Colleges</span>
+            <span class="service-icon mint">CA</span>
+            <h2>Campus Admission</h2>
+            <p>College shortlisting, eligibility and applications.</p>
+          </a>
+          <a class="service-card" href="Abroad-Admission/index.html" data-type="abroad" data-audience="students parents" data-tags="study abroad canada uk usa australia germany scholarship visa">
+            <span class="pill">22+ Countries</span>
+            <span class="service-icon sky">SA</span>
+            <h2>Study Abroad</h2>
+            <p>University, SOP, scholarship and visa guidance.</p>
+          </a>
+          <a class="service-card" href="Career-Guidance/index.html" data-type="guidance" data-audience="students schools" data-tags="career assessment aptitude personality psychometric ai powered bangalore mumbai delhi ncr chennai">
+            <span class="pill">AI Assisted</span>
+            <span class="service-icon orange">AT</span>
+            <h2>Career Assessment</h2>
+            <p>Assessment-backed career and subject matching.</p>
+          </a>
+          <a class="service-card" href="Contact-us/index.html" data-type="guidance" data-audience="schools" data-tags="school partner admission counselling program">
+            <span class="pill">Partner Plan</span>
+            <span class="service-icon rose">SP</span>
+            <h2>School Partnership</h2>
+            <p>Guidance programs for classrooms and batches.</p>
+          </a>
+        </div>
+        <p class="empty-result" id="emptyResult" hidden>No matching option found. Try another course, city or pathway.</p>
+      </section>
+
+      <section class="planner-band">
+        <div class="planner-copy">
+          <p class="eyebrow">Quick admission planner</p>
+          <h2>Tell us your goal. We will map the next step.</h2>
+          <p>Use the planner to get a suggested admission path for online, campus or abroad options.</p>
+        </div>
+        <form class="planner-card" id="plannerForm">
+          <label>
+            <span>What do you want to study?</span>
+            <select id="courseSelect">
+              <option>Management and MBA</option>
+              <option>Engineering and Technology</option>
+              <option>Medical and Healthcare</option>
+              <option>Commerce and Finance</option>
+              <option>Design and Media</option>
+            </select>
+          </label>
+          <label>
+            <span>Preferred pathway</span>
+            <select id="goalSelect">
+              <option>India Campus Admission</option>
+              <option>India Online Admission</option>
+              <option>Abroad Admission</option>
+              <option>Career Guidance</option>
+            </select>
+          </label>
+          <button type="submit">Start</button>
+        </form>
+      </section>
+	  
+	  <section class="counter-section">
+
+		<div class="counter-container">
+
+        <div class="counter-left">
+            <h2>
+                Join <span>5000+</span> Students Who Trust
+                <br>
+                Nehra Education
+            </h2>
+        </div>
+
+        <div class="counter-box">
+            <h3 class="counter" data-target="95">0</h3>
+            <p>Placement Rate</p>
+        </div>
+
+        <div class="counter-box">
+            <h3 class="counter green" data-target="15">0</h3>
+            <p>Specializations</p>
+        </div>
+
+        <div class="counter-box">
+            <h3 class="counter pink" data-target="40">0</h3>
+            <p>Avg Salary Growth</p>
+        </div>
+
+		</div>
+
+	  </section>
+	  
+	  <section class="testimonial-section">
+
+    <div class="section-header">
+
+        <span class="badge">REAL STORIES</span>
+
+        <h2>What Our Students Say</h2>
+
+        <p>
+            Hundreds of students have transformed their careers through
+            Nehra Education
+        </p>
+
+    </div>
+
+    <div class="testimonial-wrapper">
+
+        <button class="nav-btn prev">&#10094;</button>
+
+        <div class="testimonial-slider">
+
+            <div class="testimonial-track">
+
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+
+                    <div class="quote">"</div>
+
+                    <p class="review">
+                        The BBA program at Nehra Education gave me both
+                        theoretical foundations and real-world skills in
+                        business analytics. The faculty genuinely cares
+                        about student growth.
+                    </p>
+
+                    <div class="student-info">
+
+                        <img src="images/student1.jpg" alt="">
+
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <span>BBA Graduate, Business Analytics</span>
+                        </div>
+
+                    </div>
+
+                    <div class="company-tag">
+                        🏢 Now at Deloitte
+                    </div>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="testimonial-card active">
+
+                    <div class="quote">"</div>
+
+                    <p class="review">
+                        Enrolling in the BCA program with a Cloud Computing
+                        specialization was the best decision. The hands-on
+                        labs and certifications opened doors I didn't expect.
+                    </p>
+
+                    <div class="student-info">
+
+                        <img src="images/student2.jpg" alt="">
+
+                        <div>
+                            <h4>Ankush Verma</h4>
+                            <span>BCA Graduate, Cloud Specialization</span>
+                        </div>
+
+                    </div>
+
+                    <div class="company-tag">
+                        🏢 Now at Infosys
+                    </div>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="testimonial-card">
+
+                    <div class="quote">"</div>
+
+                    <p class="review">
+                        The MBA program with an AI & Analytics focus was
+                        exceptional. Career counselling sessions were
+                        incredibly practical and helped me land a top
+                        finance role.
+                    </p>
+
+                    <div class="student-info">
+
+                        <img src="images/student3.jpg" alt="">
+
+                        <div>
+                            <h4>Amit Khanna</h4>
+                            <span>MBA Graduate, AI & Analytics</span>
+                        </div>
+
+                    </div>
+
+                    <div class="company-tag">
+                        🏢 Now at HDFC
+                    </div>
+
+                </div>
+				<div class="testimonial-card">
+
+                    <div class="quote">"</div>
+
+                    <p class="review">
+                        The BBA program at Nehra Education gave me both
+                        theoretical foundations and real-world skills in
+                        business analytics. The faculty genuinely cares
+                        about student growth.
+                    </p>
+
+                    <div class="student-info">
+
+                        <img src="images/student1.jpg" alt="">
+
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <span>BBA Graduate, Business Analytics</span>
+                        </div>
+
+                    </div>
+
+                    <div class="company-tag">
+                        🏢 Now at Deloitte
+                    </div>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="testimonial-card active">
+
+                    <div class="quote">"</div>
+
+                    <p class="review">
+                        Enrolling in the BCA program with a Cloud Computing
+                        specialization was the best decision. The hands-on
+                        labs and certifications opened doors I didn't expect.
+                    </p>
+
+                    <div class="student-info">
+
+                        <img src="images/student2.jpg" alt="">
+
+                        <div>
+                            <h4>Ankush Verma</h4>
+                            <span>BCA Graduate, Cloud Specialization</span>
+                        </div>
+
+                    </div>
+
+                    <div class="company-tag">
+                        🏢 Now at Infosys
+                    </div>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="testimonial-card">
+
+                    <div class="quote">"</div>
+
+                    <p class="review">
+                        The MBA program with an AI & Analytics focus was
+                        exceptional. Career counselling sessions were
+                        incredibly practical and helped me land a top
+                        finance role.
+                    </p>
+
+                    <div class="student-info">
+
+                        <img src="images/student3.jpg" alt="">
+
+                        <div>
+                            <h4>Amit Khanna</h4>
+                            <span>MBA Graduate, AI & Analytics</span>
+                        </div>
+
+                    </div>
+
+                    <div class="company-tag">
+                        🏢 Now at HDFC
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="nav-btn next">&#10095;</button>
+
+    </div>
+
+</section>
+
+      <section class="split-showcase">
+        <div>
+          <p class="eyebrow">Why students choose us</p>
+          <h2>A single platform for choices that usually feel scattered.</h2>
+          <p>
+            Compare programs, talk to counsellors, understand eligibility and keep your application steps organized from one place.
+          </p>
+          <div class="stats-row">
+            <div><strong data-count="25000">0</strong><span>Student reviews</span></div>
+            <div><strong data-count="480">0</strong><span>Cities covered</span></div>
+            <div><strong data-count="1200">0</strong><span>College options</span></div>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Students discussing admission plans" />
+      </section>
+    </main>
+
+	<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-column company-info">
+            <img src="images/logo.png" alt="logo" width="150">
+
+            <p>
+                Empowering the next generation of professionals with
+                industry-aligned degree programs, postgraduate courses,
+                and skill certifications across technology and management.
+            </p>
+
+            <div class="contact-info">
+                <p>📍 1303, 13th Floor, Tower-A, EON Building, Sector 140, Noida</p>
+                <p>📞 <a href="tel:+919217670285">9217670285</a></p>
+				<p>✉ <a href="mailto:info@nehraeducation.com">info@nehraeducation.com</a></p>
+            </div>
+
+            <div class="social-icons">
+				<a href="https://www.instagram.com/nehraeducation?igsh=MWdvMzFmZ3Vqd3J1ag=="><img src="images/logo/instagram.png" alt="Instagram"></a>
+				<a href="https://www.linkedin.com/company/nehraeducation/"><img src="images/logo/linkedin.png" alt="LinkedIn"></a>
+				<a href="#"><img src="images/logo/youtube.png" alt="YouTube"></a>
+				<a href="#"><img src="images/logo/facebook.png" alt="Facebook"></a>
+				<a href="#"><img src="images/logo/twitter.png" alt="Twitter"></a>
+			</div>
+        </div>
+
+        <!-- Graduation -->
+        <div class="footer-column">
+            <h3>GRADUATION</h3>
+            <ul>
+                <li>B.Com + FinTech / Analytics</li>
+                <li>B.Sc Data Science / Artificial Intelligence</li>
+                <li>BBA</li>
+                <li>BCA</li>
+            </ul>
+        </div>
+
+        <!-- Post Graduation -->
+        <div class="footer-column">
+            <h3>POST GRADUATION</h3>
+            <ul>
+                <li>M.Sc Data Science / Artificial Intelligence</li>
+                <li>MBA</li>
+                <li>MCA</li>
+                <li>PGDM / Business Analytics</li>
+            </ul>
+        </div>
+
+        <!-- Skill Certifications -->
+        <div class="footer-column">
+            <h3>SKILL CERTIFICATIONS</h3>
+            <ul>
+                <li>AI Tools Certification</li>
+                <li>Cybersecurity Basics Certification</li>
+                <li>Data Analytics Certification</li>
+                <li>Digital Marketing Certification</li>
+            </ul>
+
+            <h3 class="quick-title">QUICK LINKS</h3>
+            <ul>
+                <li><a href="#">Why Choose Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">All Programs</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-column">
+            <h3>STAY UPDATED</h3>
+
+            <p>
+                Get course updates, admission alerts & career tips.
+            </p>
+
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email">
+                <button type="submit">Subscribe</button>
+            </form>
+
+            <small>
+                By subscribing you agree to our Privacy Policy.
+            </small>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Nehra Education. All Rights Reserved.</p>
+
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+	</footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="js/script.js"></script>
+	<script src="js/1001.js"></script>
+  </body>
+</html>
