@@ -163,3 +163,177 @@ setupHomeSearch();
 setupPlanner();
 setupCounters();
 setupContactForms();
+
+/* ============================================================
+   CUSTOMER ENQUIRY FORM
+   - Client-side validation (name / email / phone / subject / message)
+   - Loading state, success/error status
+   - Email delivery via FormSubmit (no backend, no API keys)
+   - WhatsApp redirect with pre-filled enquiry details
+   ============================================================ */
+
+// ⬇⬇⬇  EDIT THESE TWO LINES  ⬇⬇⬇
+const ENQUIRY_EMAIL   = "info@nehraeducation.com"; // ← your receiving email
+const WHATSAPP_NUMBER = "919217670285";            // ← country code + number, digits only
+// ⬆⬆⬆  EDIT THESE TWO LINES  ⬆⬆⬆
+
+(function initEnquiryForm() {
+  const form = document.getElementById("enquiryForm");
+  if (!form) return;
+
+  const submitBtn   = form.querySelector("#submitBtn");
+  const statusEl    = form.querySelector("#formStatus");
+  const whatsappBtn = form.querySelector("#whatsappBtn");
+
+  const fields = {
+    fullName: form.querySelector("#fullName"),
+    phone:    form.querySelector("#phone"),
+    email:    form.querySelector("#email"),
+    subject:  form.querySelector("#subject"),
+    message:  form.querySelector("#message"),
+  };
+
+  // ---------- Validation helpers ----------
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const PHONE_RE = /^[0-9]{10,15}$/; // digits only, 10–15 (handles country codes)
+
+  function setError(fieldName, message) {
+    const input = fields[fieldName];
+    if (!input) return;
+    const group = input.closest(".input-group");
+    const errorEl = form.querySelector(`[data-error-for="${fieldName}"]`);
+    if (message) {
+      group?.classList.add("has-error");
+      if (errorEl) errorEl.textContent = message;
+      input.setAttribute("aria-invalid", "true");
+    } else {
+      group?.classList.remove("has-error");
+      if (errorEl) errorEl.textContent = "";
+      input.removeAttribute("aria-invalid");
+    }
+  }
+
+  function validate() {
+    let ok = true;
+    const name  = fields.fullName.value.trim();
+    const phone = fields.phone.value.replace(/[\s\-()+]/g, "");
+    const email = fields.email.value.trim();
+    const subj  = fields.subject.value.trim();
+    const msg   = fields.message.value.trim();
+
+    if (name.length < 2)        { setError("fullName", "Please enter your full name."); ok = false; }
+    else                         setError("fullName", "");
+
+    if (!PHONE_RE.test(phone))  { setError("phone", "Enter a valid phone number (10–15 digits)."); ok = false; }
+    else                         setError("phone", "");
+
+    if (!EMAIL_RE.test(email))  { setError("email", "Enter a valid email address."); ok = false; }
+    else                         setError("email", "");
+
+    if (!subj)                  { setError("subject", "Please choose a service."); ok = false; }
+    else                         setError("subject", "");
+
+    if (msg.length < 5)         { setError("message", "Please share a short message (min 5 characters)."); ok = false; }
+    else                         setError("message", "");
+
+    return ok;
+  }
+
+  // Clear per-field errors as user types
+  Object.entries(fields).forEach(([key, el]) => {
+    el.addEventListener("input", () => setError(key, ""));
+    el.addEventListener("change", () => setError(key, ""));
+  });
+
+  // ---------- Status helpers ----------
+  function setStatus(kind, message) {
+    statusEl.className = "form-status" + (kind ? ` is-${kind}` : "");
+    statusEl.textContent = message || "";
+  }
+
+  function setLoading(loading) {
+    submitBtn.disabled = loading;
+    submitBtn.classList.toggle("is-loading", loading);
+    submitBtn.querySelector(".btn-label").textContent =
+      loading ? "Sending..." : "Submit Enquiry →";
+  }
+
+  // ---------- WhatsApp link ----------
+  function buildWhatsAppLink(data) {
+    const text =
+      `*New Customer Enquiry*%0A%0A` +
+      `*Name:* ${encodeURIComponent(data.fullName)}%0A` +
+      `*Email:* ${encodeURIComponent(data.email)}%0A` +
+      `*Phone:* ${encodeURIComponent(data.phone)}%0A` +
+      `*Subject:* ${encodeURIComponent(data.subject)}%0A` +
+      `*Message:* ${encodeURIComponent(data.message)}`;
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  }
+
+  // ---------- Submit ----------
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    setStatus("", "");
+    whatsappBtn.hidden = true;
+
+    if (!validate()) {
+      setStatus("error", "Please fix the highlighted fields and try again.");
+      const firstError = form.querySelector(".has-error input, .has-error select, .has-error textarea");
+      firstError?.focus();
+      return;
+    }
+
+    const data = {
+      fullName: fields.fullName.value.trim(),
+      email:    fields.email.value.trim(),
+      phone:    fields.phone.value.trim(),
+      subject:  fields.subject.value,
+      message:  fields.message.value.trim(),
+      submittedAt: new Date().toLocaleString(),
+    };
+
+    setLoading(true);
+    try {
+      // FormSubmit — free, no signup required (first submission triggers a
+      // one-time confirmation email to ENQUIRY_EMAIL). Docs: https://formsubmit.co
+      const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(ENQUIRY_EMAIL)}`;
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `New Enquiry: ${data.subject} — ${data.fullName}`,
+          _template: "table",
+          _captcha: "false",
+          "Customer Name":        data.fullName,
+          "Customer Email":       data.email,
+          "Phone Number":         data.phone,
+          "Subject / Service":    data.subject,
+          "Message":              data.message,
+          "Submission Date/Time": data.submittedAt,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+
+      setStatus("success",
+        "Thank you! Your enquiry has been submitted. Our team will contact you shortly."
+      );
+
+      // Prepare WhatsApp CTA
+      whatsappBtn.href = buildWhatsAppLink(data);
+      whatsappBtn.hidden = false;
+
+      form.reset();
+    } catch (err) {
+      console.error("Enquiry submission failed:", err);
+      setStatus("error",
+        "We couldn't send your enquiry right now. Please try again, or contact us on WhatsApp."
+      );
+      // Still offer WhatsApp fallback with entered details
+      whatsappBtn.href = buildWhatsAppLink(data);
+      whatsappBtn.hidden = false;
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
