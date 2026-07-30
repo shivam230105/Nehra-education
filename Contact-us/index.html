@@ -3,24 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>India Campus Admission | Nehra Education</title>
+    <title>Contact Us | Nehra Education</title>
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="../css/styles.css" />
-	
-	<!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	
-	<link rel="stylesheet" href="../css/program-explorer.css" />
-	
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-      <link rel="stylesheet" href="" />
+	<link rel="stylesheet" href="../css/con1001.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <link rel="stylesheet" href="../css/responsive.css" />
   </head>
-  <body data-page="campus">
+  <body data-page="contact">
     <header class="site-header">
       <nav class="navbar" aria-label="Primary navigation">
         <a class="brand" href="../index.html" aria-label="Nehra Education">
@@ -29,42 +19,290 @@
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
         <div class="nav-links" id="navLinks">
           <a href="../India Online Admission/index.html" data-nav="online">India Online Admission</a>
-          <a href="index.html" data-nav="campus">India Campus Admission</a>
+          <a href="../India Campus Admission/index.html" data-nav="campus">India Campus Admission</a>
           <a href="../Abroad Admission/index.html" data-nav="abroad">Abroad Admission</a>
           <a href="../Career Guidance/index.html" data-nav="guidance">Career Guidance</a>
           <a href="../Why-us/index.html" data-nav="why">Why Us</a>
           <a href="../About-us/index.html" data-nav="about">About Us</a>
-          <a href="../Contact-us/index.html" data-nav="contact">Contact Us</a>
+          <a href="index.html" data-nav="contact">Contact Us</a>
         </div>
-        <div class="header-actions"><a class="audit-btn" href="../Contact-us/index.html">Free Career Audit <span aria-hidden="true">&rarr;</span></a></div>
+        <div class="header-actions"><a class="audit-btn" href="index.html">Free Career Audit <span aria-hidden="true">&rarr;</span></a></div>
       </nav>
     </header>
 
     <main>
-      <section class="page-hero">
-        <div>
-          <p class="eyebrow">India campus admission</p>
-          <h1>Choose the right college before you apply.</h1>
-          <p>Shortlist Indian universities and colleges by city, course, entrance score, budget, recognition and placement support.</p>
-          <div class="hero-actions"><a class="primary-link" href="../Contact-us/index.html">Start College Shortlist</a><a class="secondary-link" href="../Why-us/index.html">See Our Process</a></div>
-        </div>
-        <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80" alt="Indian college campus building" />
-      </section>
+      <section class="contact-section">
 
-<section class="program-explorer-section" aria-label="Program explorer">
-  <aside class="program-sidebar" aria-label="Program categories">
-    <h2 class="program-sidebar__title">Categories</h2>
-    <ul class="program-sidebar__list" role="tablist" aria-orientation="vertical"></ul>
-  </aside>
-  <main class="program-content" aria-live="polite">
-    <header class="program-content__header">
-      <h1 class="program-content__heading">Career Aligned Learning Paths</h1>
-      <p class="program-content__subtitle">Master essential skills for your dream career</p>
-    </header>
-    <div class="program-grid" role="list"></div>
-  </main>
+    <!-- Center Heading -->
+
+    <div class="section-heading">
+
+        <span class="badge">GET IN TOUCH</span>
+
+        <h2>Start Your Journey Today</h2>
+
+        <p>
+            Share your details and our counselling team will recommend a clear next step for your education plan.
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <!-- Left Form -->
+
+        <div class="form-box">
+
+            <!-- Customer Enquiry Form -->
+            <form id="enquiryForm" novalidate>
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name" required>
+                        <small class="field-error" data-error-for="fullName"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" inputmode="tel" autocomplete="tel" required>
+                        <small class="field-error" data-error-for="phone"></small>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+                        <small class="field-error" data-error-for="email"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">Subject / Service Required <span aria-hidden="true">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a service</option>
+                            <option>India Online Admission</option>
+                            <option>India Campus Admission</option>
+                            <option>Abroad Admission</option>
+                            <option>Career Guidance</option>
+                            <option>Free Career Audit</option>
+                            <option>Other Enquiry</option>
+                        </select>
+                        <small class="field-error" data-error-for="subject"></small>
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+
+                    <textarea id="message" name="message" placeholder="Tell us about your goals..." required></textarea>
+                    <small class="field-error" data-error-for="message"></small>
+
+                </div>
+
+                <!-- Honeypot (spam protection) -->
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                <button type="submit" id="submitBtn">
+                    <span class="btn-label">Submit Enquiry →</span>
+                    <span class="btn-spinner" aria-hidden="true"></span>
+                </button>
+
+                <!-- Live status region -->
+                <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+                <!-- WhatsApp button shown after successful submission -->
+                <a id="whatsappBtn" class="whatsapp-btn" href="https://wa.me/919217670285" target="_blank" rel="noopener" hidden>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Continue on WhatsApp
+                </a>
+
+            </form>
+
+        </div>
+
+        <!-- Right Contact -->
+
+        <div class="contact-info">
+
+            <h3>Contact Us Directly</h3>
+
+            <div class="info-item">
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <h4>Visit Us</h4>
+                    <p>
+                        1303, 13th Floor, Tower-A,
+                        EON Building, Sector 140,
+                        Noida
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+                    <h4>Call Us</h4>
+                    <a href="tel:+919217670285">9217670285</a>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <h4>Email Us</h4>
+                    <a href="mailto:info@nehraeducation.com">
+                        info@nehraeducation.com
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="icon-box">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div>
+                    <h4>Follow Us</h4>
+                    <a href="#">@nehraeducation</a><br>
+                    <a href="#">LinkedIn</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </section>
-     
+
+
+<div>
+
+
+<!-- ================= CHATBOT ================= -->
+
+<div class="chatbot">
+
+    <!-- Floating Button -->
+
+    <div class="chat-toggle" id="chatToggle">
+
+        <i class="fas fa-comments"></i>
+
+    </div>
+
+    <!-- Chat Window -->
+
+    <div class="chat-window" id="chatWindow">
+
+        <!-- Header -->
+
+        <div class="chat-header">
+
+            <div class="header-left">
+
+                <div class="bot-avatar">
+
+                    <i class="fas fa-robot"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Nehra Education</h3>
+
+                    <span>Online</span>
+
+                </div>
+
+            </div>
+
+            <button id="closeChat">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Chat Body -->
+
+        <div class="chat-body" id="chatBody">
+
+            <div class="bot-message">
+
+                <div class="msg">
+
+                    👋 Hello!
+
+                    <br><br>
+
+                    Welcome to <b>Nehra Education.</b>
+
+                    <br><br>
+
+                    How can i help you 😊?
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Typing -->
+
+        <div class="typing" id="typing">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+        <!-- Input -->
+
+        <div class="chat-input">
+
+            <input
+            type="text"
+            id="userInput"
+            placeholder="Type your message...">
+
+            <button id="sendBtn">
+
+                <i class="fas fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
     </main>
     <footer class="footer">
     <div class="footer-container">
@@ -129,7 +367,7 @@
             <h3 class="quick-title">QUICK LINKS</h3>
             <ul>
                 <li><a href="../Why-us/index.html">Why Choose Us</a></li>
-                <li><a href="../Contact-us/index.html">Contact Us</a></li>
+                <li><a href="#">Contact Us</a></li>
                 <li><a href="#">All Programs</a></li>
             </ul>
         </div>
@@ -162,10 +400,210 @@
             <a href="#">Terms of Service</a>
         </div>
     </div>
+	
 	</footer>
 	<div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="../js/script.js"></script>
-	<script src="../js/program-explorer.js"></script>
-	
+    <script src="../js/chatbot.js"></script>
+	<script>
+		*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.admission-section{
+    padding:100px 5%;
+    background:#f8f9fc;
+}
+
+.admission-container{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+/* LEFT */
+
+.admission-left{
+    flex:1;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0e6;
+    color:#ff6b00;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.admission-left h2{
+    font-size:78px;
+    line-height:1;
+    color:#131d3a;
+    margin-bottom:25px;
+    font-weight:800;
+}
+
+.admission-left p{
+    font-size:28px;
+    color:#5b6b86;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+.service-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.service-tags span{
+    background:#eef2f8;
+    border:1px solid #d9e1ee;
+    padding:15px 25px;
+    border-radius:40px;
+    font-size:20px;
+    font-weight:600;
+    color:#24385b;
+}
+
+/* RIGHT */
+
+.admission-right{
+    flex:1;
+    background:#fff;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(252,117,31,0.10);
+}
+
+.form-row{
+    display:flex;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.input-group{
+    flex:1;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#131d3a;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:16px;
+    border:1px solid #d9dee7;
+    border-radius:12px;
+    font-size:16px;
+}
+
+textarea{
+    height:120px;
+    resize:none;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    border:none;
+    background:#ff6b00;
+    color:#fff;
+    padding:18px;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#e85f00;
+}
+
+.contact-box{
+    margin-top:30px;
+    border-top:1px solid #eee;
+    padding-top:25px;
+}
+
+.contact-item{
+    margin-bottom:15px;
+    font-size:17px;
+    color:#555;
+}
+
+.contact-item a{
+    color:#ff6b00;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+    .admission-container{
+        flex-direction:column;
+    }
+
+    .admission-left h2{
+        font-size:55px;
+    }
+
+    .admission-left p{
+        font-size:22px;
+    }
+
+    .form-row{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:576px){
+
+    .admission-left h2{
+        font-size:42px;
+    }
+
+    .admission-left p{
+        font-size:18px;
+    }
+
+    .service-tags span{
+        font-size:14px;
+        padding:12px 18px;
+    }
+
+    .admission-right{
+        padding:25px;
+    }
+}
+<script>
+document.getElementById("enquiryForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert("Thank you! Our counsellor will contact you shortly.");
+
+    this.reset();
+
+});
+</script>
+
+	</script>
   </body>
 </html>
